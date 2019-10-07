@@ -1,0 +1,27 @@
+{
+  "name": "ts-mongo-migrate",
+  "version": "1.0.0",
+  "description": "I used this script to move my old db from 2.4 instance to 4.2 instance",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && tsc -p .",
+    "payout": "node dist/cli/payout.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "mongodb": "^2.2.33",
+    "single-line-log": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/mongodb": "^2.2.3",
+    "@types/node": "^10.12.21",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.3.3"
+  }
+}
