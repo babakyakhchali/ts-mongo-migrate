@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 const log = require('single-line-log').stdout;
 async function main() {
     try {
+        console.log('started:',new Date);
         const srcClient = await MongoClient.connect(process.env.SRC!);
         const dstClient = await MongoClient.connect(process.env.DST!);
         const collections = await srcClient.collections();
@@ -39,7 +40,9 @@ async function main() {
                 log(i++,cnt, d._id);
                 await nc.insertOne(d, {});
             }
+            console.log('\n')
         }        
+        console.log('end:',new Date);
         process.exit();
     } catch (error) {
         console.error(error);
